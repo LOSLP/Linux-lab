@@ -8,6 +8,8 @@
 
 Durante a configuração no arquivo utilizado pelo PAM para controlar o comportamento do comando `su`, devido a um erro que cometi quando criei a regra de bloqueio para impedir o usuário voyager de realizar elevação de privilégios para root através do comando `su`, acabei impossibilitando o uso do comando para acessar qualquer usuário.
 
+Como apenas o usuário voyager pode realizar login via SSH e eu precisaria acessar o usuário octavio para então poder virar root, acabei ficando preso no usuário voyager sem privilégios.
+
 ## Diagnóstico
 
 Como meu ambiente é uma VPS hospedada em IaaS e possui o recurso de VNC, utilizei esse recurso para acessar o servidor e logar diretamente como root e então buscar uma solução para o problema.
@@ -15,8 +17,6 @@ Como meu ambiente é uma VPS hospedada em IaaS e possui o recurso de VNC, utiliz
 Depois de analisar os logs do servidor e a configuração que foi feita por mim nos arquivos do PAM, identifiquei que a falha ocorreu porque, quando fui configurar a linha de comando no PAM, devido à falta de conhecimento, não defini um comportamento para o caso de a regra não ser atendida.
 
 Dessa forma, o PAM não sabia o que fazer e acabou bloqueando o usuário voyager de utilizar o comando `su` para acessar o usuário octavio também, e não apenas o root.
-
-Como apenas o usuário voyager pode realizar login via SSH e eu precisaria acessar o usuário octavio para então poder virar root, acabei ficando preso no usuário voyager sem privilégios.
 
 ### Comando executado:
 
