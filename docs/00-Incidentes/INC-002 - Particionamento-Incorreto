@@ -1,1 +1,43 @@
+## Particionamento Incorreto
+
+## Data
+
+22/10/2026 
+
+## Sintoma
+
+Durante a instalacao do Rocky Linux, SO do data center, propositalmente eu deixei o particionamento como padrao, a ideia era quando essa configuracao padrao se torna-se
+um impesilho na configuracao do Incus, que eu descobrisse um modo de solucionar sem ter que realizar a reinstalacao do sistema. 
+
+Por padrao, o rocky linux criou duas particoes durante a instalacao, Sda1 contendo os arquivos do /bot, e Sda2 contendo os arquivos do /raiz, swap e /home.
+
+Isso se tornou um problema, pois meu objetivo e ter o storage pool do incus isolado do resto do sistema, para facilitar os processos de backup, administracao dos containers, etc.
+
+## Diagnóstico
+
+
+
+### Comando executado:
+
+```bash
+
+```
+
+## Correção 
+
+
+
+## Evidências
+
+As imagens abaixo demonstram o estado do servidor durante o problema e após a resolução.
+
+### Sintoma
+
+
+
+### Diagnóstico
+
+
+
+### Correção
 
