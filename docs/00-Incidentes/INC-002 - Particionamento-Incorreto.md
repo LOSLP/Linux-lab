@@ -51,6 +51,12 @@ no inicio do laboratorio, prefiro refazer da forma correta.
 Nao considero minha decisao uma derrota tecnica, foi uma ótima experiencia de aprendizado, aprendi sobre analise de armazenamento, planejamento prévio das partições 
 do servidor, formatos de particionamento, etc.
 
+Durante o processo de instalação do servidor, planejei melhor como deveria ser o armazenamento e particionei o servidor de forma que o incus fique com a maior parte do armazenamento.
+
+A estrutura ficou da seguinte forma, criei duas partições, sda1 com 1GiB no formato xfs para o /boot  e sda2 com 149GiB no formato LVM2. Os volumes lógicos do sda2 foram estruturados da seguinte forma, sao 3 no total, o primeiro e o /root com 25Gib no formato xfs, o segundo e o swap com 8GiB no formato swap, e o ultimo e o incus com 100GiB no formato xfs.
+
+Propositalmente não usei todo o espaço disponível no sda2, deixei 16GiB caso haja alguma necessidade futura, como aumento de alguma partição ou emergências. 
+
 ## Evidências
 
 As imagens abaixo demonstram o estado do servidor durante o problema e após a resolução.
@@ -65,3 +71,4 @@ As imagens abaixo demonstram o estado do servidor durante o problema e após a r
 
 ### Correção
 
+<img width="1257" height="696" alt="image" src="https://github.com/user-attachments/assets/ecc7c1c7-06f1-4644-a37d-0256d344c0eb" />
